@@ -15,6 +15,7 @@ export const loginUser = (data, history) => dispatch => {
   return AuthRoute()
     .post("/auth/login", data)
     .then(res => {
+      console.log(res.data);
       localStorage.setItem("token", res.data.token);
       history.push("/dashboard");
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });

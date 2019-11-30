@@ -6,6 +6,7 @@ import Login from "./components/auth/login";
 import Home from "./pages/home";
 import Dashboard from "./components/dashboard/dashboard";
 import PrivateRoute from "./util/PrivateRoute";
+
 function App() {
   return (
     <div className="App">

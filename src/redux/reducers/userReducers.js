@@ -9,12 +9,7 @@ import {
 
 const initialState = {
   token: "",
-  user: {
-    username: "",
-    password: "",
-    firstName: "",
-    lastName: ""
-  },
+  user: [],
   isAuth: false,
   isLoading: false,
   errors: null,
@@ -36,7 +31,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         token: payload.token,
-        user: { payload },
+        user: payload.user,
         isAuth: true,
         isLoading: true,
         isSuccess: true
@@ -55,10 +50,9 @@ export default (state = initialState, action) => {
         isAuth: false
       };
     case REGISTER_SUCCESS:
-      console.log();
       return {
         token: payload.token,
-        user: { payload },
+        user: payload.user,
         isAuth: true,
         isLoading: false,
         isSuccess: true
