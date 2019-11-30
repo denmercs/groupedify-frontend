@@ -16,7 +16,6 @@ export const loginUser = (data, history) => dispatch => {
     .post("/auth/login", data)
     .then(res => {
       localStorage.setItem("token", res.data.token);
-      history.push("/dashboard");
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     })
     .catch(err => {
@@ -25,12 +24,12 @@ export const loginUser = (data, history) => dispatch => {
     });
 };
 
-export const registerUser = data => dispatch => {
+export const registerUser = (data, history) => dispatch => {
   dispatch({ type: REGISTER_START });
   return AuthRoute()
     .post("/auth/register", data)
     .then(res => {
-      console.log("this is the registration: ", res.data);
+      localStorage.setItem("token", res.data.token);
       dispatch({ type: REGISTER_SUCCESS, payload: res.data });
     })
     .catch(err => {

@@ -47,6 +47,28 @@ export default (state = initialState, action) => {
         errors: payload,
         isLoading: false
       };
+    case REGISTER_START:
+      return {
+        ...state,
+        isLoading: true,
+        errors: null,
+        isAuth: false
+      };
+    case REGISTER_SUCCESS:
+      console.log();
+      return {
+        token: payload.token,
+        user: { payload },
+        isAuth: true,
+        isLoading: false,
+        isSuccess: true
+      };
+    case REGISTER_FAIL:
+      return {
+        ...state,
+        errors: payload,
+        isAuth: false
+      };
     default:
       return state;
   }
