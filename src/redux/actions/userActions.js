@@ -16,6 +16,7 @@ export const loginUser = (data, history) => dispatch => {
     .post("/auth/login", data)
     .then(res => {
       localStorage.setItem("token", res.data.token);
+      history.push("/dashboard");
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     })
     .catch(err => {
@@ -30,6 +31,7 @@ export const registerUser = (data, history) => dispatch => {
     .post("/auth/register", data)
     .then(res => {
       localStorage.setItem("token", res.data.token);
+      history.push("/dashboard");
       dispatch({ type: REGISTER_SUCCESS, payload: res.data });
     })
     .catch(err => {

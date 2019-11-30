@@ -66,8 +66,7 @@ const registerComponent = compose(
     }),
 
     handleSubmit(values, { props }) {
-      props.registerUser(values);
-      props.history.push("/dashboard");
+      props.registerUser(values, props.history);
     }
   })
 )(Register);

@@ -49,8 +49,7 @@ const LoginComponent = compose(
     }),
 
     handleSubmit(values, { props }) {
-      props.loginUser(values);
-      props.history.push("/dashboard");
+      props.loginUser(values, props.history);
     }
   })
 )(LoginForm);
