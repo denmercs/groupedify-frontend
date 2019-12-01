@@ -1,0 +1,48 @@
+.header {
+  font-size: 0.5rem;
+  letter-spacing: 0.15rem;
+  background-color: #625757;
+  width: 150px;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: column;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &-logo {
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .logo {
+      padding-top: 2rem;
+      text-transform: uppercase;
+      font-family: "Solway", serif;
+    }
+  }
+
+  &-schedule,
+  &-study,
+  &-profile,
+  &-logout {
+    margin: 1rem 0;
+    padding: 1rem;
+
+    img {
+      width: 60px;
+    }
+
+    p {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+  }
+}
